@@ -81,19 +81,11 @@ square.draw = function (time) {
 };
 p.push(square);
 
-// old code for ref
-/*
-var p = {
-    x: c.width / 2,
-    y: c.height / 2
+var line = createClip();
+line.draw = function (time) {
+    t.beginPath();
+    t.moveTo(16, (Math.sin(time / 2400) > 0) ? (16 + (Math.abs(Math.sin(time / 2400)) * (h - 32))) : 16);
+    t.lineTo(16, (Math.sin(time / 2400) < 0) ? (h - 16 - (Math.abs(Math.sin(time / 2400)) * (h - 32))) : h - 16);
+    t.stroke();
 };
-var a = Math.random() * Math.PI * 2;
-t.beginPath();
-t.moveTo(p.x, p.y);
-for (var i = 0; i < 7; i++) {
-    p.x += (32 + Math.random() * 32) * Math.cos(a + i / 7);
-    p.y += (32 + Math.random() * 32) * Math.sin(a + i / 7);
-    t.lineTo(p.x, p.y);
-}
-t.stroke();
-*/
+p.push(line);
