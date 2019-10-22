@@ -1,14 +1,30 @@
-var b = document.body;
+var b, c, t, w, h;
+
+// b => body
+b = document.body;
+
 b.style.margin = 0;
 b.style.background = '#113644';
-var c = document.querySelector('canvas');
-c.width = window.innerWidth;
-c.height = window.innerHeight;
-var t = c.getContext('2d');
+
+// c => canvas
+c = document.querySelector('canvas');
+
+// w => width, h => height
+window.addEventListener('resize', function () {
+    w = c.width = window.innerWidth;
+    h = c.height = window.innerHeight;
+});
+window.dispatchEvent(new Event('resize'));
+
+// t => context
+t = c.getContext('2d');
+
 t.fillStyle = '#869496';
 t.strokeStyle = '#869496';
-console.log('external');
+
+// documentation
 console.log(t);
+
 /*
 var p = {
     x: c.width / 2,
