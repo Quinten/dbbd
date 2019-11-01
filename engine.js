@@ -57,5 +57,3 @@ function createClip({
 
     return clip;
 }
-
-//fetch('index.js').then((resp) => { return resp.text() }).then((text) => console.log(text) );
