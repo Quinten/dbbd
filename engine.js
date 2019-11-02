@@ -9,21 +9,20 @@ b.style.background = '#113644';
 // c => canvas
 c = document.querySelector('canvas');
 
+// t => context
+t = c.getContext('2d');
+
+// documentation
+console.log(t);
+
 // w => width, h => height
 window.addEventListener('resize', function () {
     w = c.width = window.innerWidth;
     h = c.height = window.innerHeight;
+    t.fillStyle = '#869496';
+    t.strokeStyle = '#869496';
 });
 window.dispatchEvent(new Event('resize'));
-
-// t => context
-t = c.getContext('2d');
-
-t.fillStyle = '#869496';
-t.strokeStyle = '#869496';
-
-// documentation
-console.log(t);
 
 // p => clips
 p = [];
